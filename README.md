@@ -4,7 +4,7 @@ This project includes project ktor-demo-app-base as a common base.
 
 
 
-## Create and publish container image app-b:
+## Create and publish container image app-a:
 1. Run `gradlew clean build`.
 2. Run `docker build -t "ktor-demo-app-a:0.0.1-SNAPSHOT-powuv" ./app_a`.
 3. Run `docker run -d -p 8123:8123 ktor-demo-app-a:0.0.1-SNAPSHOT-powuv`.
