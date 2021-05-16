@@ -19,7 +19,7 @@ Running app-a locally can be done through: `gradlew run`
 
 Running the Dapr side car locally can be done through:
 ```
-dapr run --app-id app-a --app-port 48123 --app-protocol grpc --dapr-http-port 3500 --dapr-grpc-port 50001 -- waitfor FOREVER
+dapr run --components-path ./secrets --app-id app-a --app-port 48123 --app-protocol grpc --dapr-http-port 3500 --dapr-grpc-port 50001 -- waitfor FOREVER
 ```
 (Prerequisite is that you've the Dapr CLI installed on your machine.)
 
