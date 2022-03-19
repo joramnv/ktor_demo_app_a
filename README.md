@@ -15,12 +15,19 @@ This project includes project ktor-demo-app-base as a common base.
 
 
 ## Local development:
-Running app-a locally can be done through: `gradlew run`
 
-Running the Dapr side car locally can be done through:
-(Prerequisite is that you've the Dapr CLI installed on your machine.)
+### Prerequisites:
+- JDK 11
+- Dapr CLI (Install if you haven’t already: https://docs.dapr.io/getting-started/install-dapr-cli/ )
+- Docker
+
+Running the Dapr sidecar locally can be done through:
+(Prerequisite is that you've run `dapr init` on your machine.)
 ```
-dapr run --components-path ./secrets --app-id app-a --app-port 48123 --app-protocol grpc --dapr-http-port 3500 --dapr-grpc-port 50001 -- waitfor FOREVER
+dapr run --components-path ./secrets --app-id app-a --app-port 48123 --app-protocol grpc --dapr-http-port 3500 --dapr-grpc-port 50001
 ```
 
+- Note - In order for the secrets to load correctly, it is important to start the Dapr sidecar first.
 - Note - I had some issues where locally Dapr could not find app-b from app-a and visa versa. I was connected to a VPN, when I turned off the VPN Dapr was functioning as normal again.
+
+Running app-a locally can be done through: `gradlew run`
